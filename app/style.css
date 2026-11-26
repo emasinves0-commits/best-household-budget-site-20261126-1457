@@ -1,0 +1,147 @@
+/* HomeLedger — a household ledger book, not a fintech dashboard.
+   Deep green ink on warm paper, amber for money going out. System fonts
+   only: nothing loads from the network. */
+
+:root {
+  --ink: #1d2b23;
+  --ink-soft: #3a443d;
+  --muted: #5c665e;
+  --paper: #f7f4ec;
+  --card: #fffdf7;
+  --line: #e3ddcf;
+  --green: #1d4d3b;
+  --green-soft: #e2ebe3;
+  --amber: #c98a2b;
+  --amber-soft: #f6e8cf;
+  --red: #a83c22;
+  --red-soft: #f6ddd5;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+.site-header { background: var(--green); color: #f2efe4; }
+.header-inner { display: flex; align-items: baseline; gap: 16px; padding-top: 18px; padding-bottom: 6px; flex-wrap: wrap; }
+.brand { color: #f2efe4; text-decoration: none; font-size: 30px; font-weight: 700; letter-spacing: 0.5px; }
+.household { margin: 0; color: #cfe0d2; font-size: 14px; font-family: -apple-system, 'Segoe UI', Roboto, sans-serif; }
+
+.nav { display: flex; gap: 4px; padding-bottom: 10px; overflow-x: auto; }
+.nav a {
+  color: #d9e6da; text-decoration: none; font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px; padding: 7px 13px; border-radius: 999px; white-space: nowrap;
+}
+.nav a:hover { background: rgba(255, 255, 255, 0.14); color: #fff; }
+.nav a.active { background: #f7f4ec; color: var(--green); font-weight: 700; }
+
+main { padding: 22px 20px 8px; }
+h1 { font-size: 26px; margin: 2px 0 4px; }
+h2 { font-size: 19px; margin: 0 0 10px; }
+h3 { font-size: 15px; margin: 0 0 6px; font-family: -apple-system, 'Segoe UI', Roboto, sans-serif; }
+.lede { color: var(--ink-soft); margin: 0 0 18px; max-width: 72ch; }
+.lede, p, td, th, label, input, select, button { font-family: -apple-system, 'Segoe UI', Roboto, sans-serif; }
+h1, h2, .money-big, .brand { font-family: Georgia, 'Times New Roman', serif; }
+
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.card .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 0 0 4px; }
+.money-big { font-size: 27px; font-weight: 700; margin: 0; }
+.card .sub { font-size: 13px; color: var(--muted); margin: 4px 0 0; }
+.good { color: #2e7d32; }
+.warn { color: var(--amber); }
+.over { color: var(--red); }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
+.grid-2 .card { margin-bottom: 0; }
+section.card { margin-bottom: 18px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; padding: 6px 8px; border-bottom: 2px solid var(--line); }
+td { padding: 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr:last-child td { border-bottom: none; }
+
+.bar { height: 10px; background: #ece7d9; border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 999px; }
+.budget-row { display: grid; grid-template-columns: 150px 1fr 170px; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.budget-row:last-child { border-bottom: none; }
+.budget-row .cat { font-weight: 700; }
+.budget-row .cat small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; }
+.budget-row .figures { text-align: right; font-variant-numeric: tabular-nums; }
+.budget-row .figures small { display: block; color: var(--muted); }
+.badge {
+  display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 9px; border-radius: 999px;
+}
+.badge.ok { background: var(--green-soft); color: var(--green); }
+.badge.tight { background: var(--amber-soft); color: #7a5510; }
+.badge.over { background: var(--red-soft); color: var(--red); }
+.badge.paid { background: var(--green-soft); color: var(--green); }
+.badge.due { background: var(--amber-soft); color: #7a5510; }
+
+.donut-wrap { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.legend { list-style: none; margin: 0; padding: 0; font-size: 14px; columns: 2; column-gap: 28px; }
+.legend li { padding: 3px 0; break-inside: avoid; }
+.swatch { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 7px; }
+.legend .amt { float: right; margin-left: 18px; font-variant-numeric: tabular-nums; }
+
+.toolbar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
+.toolbar input, .toolbar select {
+  padding: 8px 10px; border: 1px solid #cfc8b4; border-radius: 8px; background: #fff; font-size: 14px;
+}
+.toolbar input[type="search"] { min-width: 220px; }
+
+button {
+  cursor: pointer; font-size: 14px; padding: 8px 14px; border-radius: 8px;
+  border: 1px solid var(--green); background: var(--green); color: #fff; font-weight: 600;
+}
+button.ghost { background: #fff; color: var(--green); }
+button.small { padding: 5px 10px; font-size: 13px; }
+button:disabled { opacity: 0.45; cursor: default; }
+
+form.add-form { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr auto; gap: 10px; align-items: end; margin-top: 12px; }
+form.add-form label { font-size: 12px; color: var(--muted); display: block; margin-bottom: 3px; }
+form.add-form input, form.add-form select {
+  width: 100%; padding: 8px 10px; border: 1px solid #cfc8b4; border-radius: 8px; background: #fff; font-size: 14px;
+}
+.goal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.goal .bar { margin: 8px 0; }
+.goal .figures { display: flex; justify-content: space-between; font-size: 14px; }
+.goal .note { color: var(--muted); font-size: 13px; margin: 6px 0 10px; }
+.goal-actions { display: flex; gap: 8px; align-items: center; }
+.goal-actions input { width: 110px; padding: 7px 9px; border: 1px solid #cfc8b4; border-radius: 8px; font-size: 14px; }
+
+.callout {
+  background: var(--green-soft); border-left: 4px solid var(--green);
+  padding: 12px 16px; border-radius: 0 10px 10px 0; margin: 0 0 18px; font-size: 15px;
+}
+.callout strong { color: var(--green); }
+.legend-inline { display: flex; gap: 18px; font-size: 13px; color: var(--muted); margin-top: 8px; }
+.legend-inline .sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+
+.site-footer { padding: 18px 20px 34px; color: var(--muted); font-size: 13px; }
+.empty { color: var(--muted); padding: 18px 4px; }
+
+@media (max-width: 760px) {
+  .cards { grid-template-columns: 1fr 1fr; }
+  .grid-2, .goal-grid { grid-template-columns: 1fr; }
+  .budget-row { grid-template-columns: 110px 1fr 120px; }
+  form.add-form { grid-template-columns: 1fr 1fr; }
+  .brand { font-size: 25px; }
+  h1 { font-size: 22px; }
+  .money-big { font-size: 23px; }
+  .legend { columns: 1; }
+  table .hide-phone { display: none; }
+}
