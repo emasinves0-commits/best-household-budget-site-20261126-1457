@@ -44,6 +44,21 @@ body {
 .nav a:hover { background: rgba(255, 255, 255, 0.14); color: #fff; }
 .nav a.active { background: #f7f4ec; color: var(--green); font-weight: 700; }
 
+.month-switch { display: flex; gap: 4px; margin-left: auto; }
+.month-switch button {
+  background: transparent; border: 1px solid rgba(255, 255, 255, 0.45); color: #d9e6da;
+  padding: 5px 12px; font-size: 13px;
+}
+.month-switch button.active { background: #f7f4ec; color: var(--green); border-color: #f7f4ec; }
+
+.steps { list-style: none; margin: 0; padding: 0; }
+.steps li { display: flex; gap: 10px; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.steps li:last-child { border-bottom: none; }
+.steps .step-mark { font-weight: 700; color: var(--green); }
+.steps li.done .step-mark { color: #2e7d32; }
+.steps li.done a { color: var(--muted); }
+.steps small { display: block; color: var(--muted); font-size: 12px; }
+
 main { padding: 22px 20px 8px; }
 h1 { font-size: 26px; margin: 2px 0 4px; }
 h2 { font-size: 19px; margin: 0 0 10px; }
@@ -123,6 +138,10 @@ form.add-form input, form.add-form select {
 .goal-actions { display: flex; gap: 8px; align-items: center; }
 .goal-actions input { width: 110px; padding: 7px 9px; border: 1px solid #cfc8b4; border-radius: 8px; font-size: 14px; }
 
+.plan { border-left: 4px solid var(--green); }
+.plan-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+.plan-actions button { text-align: left; }
+
 .callout {
   background: var(--green-soft); border-left: 4px solid var(--green);
   padding: 12px 16px; border-radius: 0 10px 10px 0; margin: 0 0 18px; font-size: 15px;
@@ -134,7 +153,21 @@ form.add-form input, form.add-form select {
 .site-footer { padding: 18px 20px 34px; color: var(--muted); font-size: 13px; }
 .empty { color: var(--muted); padding: 18px 4px; }
 
+/* Bill calendar: a plain month grid, one cell per day. */
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.cal-head { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); text-align: center; padding: 4px 0; font-family: -apple-system, 'Segoe UI', Roboto, sans-serif; }
+.cal-day { min-height: 74px; border: 1px solid var(--line); border-radius: 8px; padding: 6px 7px; background: #fff; }
+.cal-day.blank { background: transparent; border-color: transparent; }
+.cal-day.has-bills { background: var(--green-soft); border-color: #b9cfba; }
+.cal-num { font-weight: 700; font-size: 14px; display: block; margin-bottom: 3px; }
+.cal-bill { font-size: 11.5px; line-height: 1.35; font-family: -apple-system, 'Segoe UI', Roboto, sans-serif; padding: 2px 4px; border-radius: 5px; margin-bottom: 3px; }
+.cal-bill.paid { background: #dcead9; color: var(--green); }
+.cal-bill.due { background: var(--amber-soft); color: #7a5510; }
+
+input[type="range"] { accent-color: var(--green); }
+
 @media (max-width: 760px) {
+  .nav { flex-wrap: wrap; overflow-x: visible; }
   .cards { grid-template-columns: 1fr 1fr; }
   .grid-2, .goal-grid { grid-template-columns: 1fr; }
   .budget-row { grid-template-columns: 110px 1fr 120px; }
