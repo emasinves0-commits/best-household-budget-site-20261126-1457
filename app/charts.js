@@ -1,7 +1,7 @@
 // SVG charts for HomeLedger, drawn by hand — no library, no network.
 // One job: turn arrays of numbers into readable SVG strings.
 
-export function donutSVG(parts, size) {
+export function donutSVG(parts, size, centreLabel) {
   // parts: [{ label, value, color }]. Returns an SVG donut with a centre total.
   const total = parts.reduce((s, p) => s + p.value, 0);
   const r = 70;
@@ -20,7 +20,7 @@ export function donutSVG(parts, size) {
     arcs +
     `<text x="100" y="96" text-anchor="middle" font-size="22" font-weight="700" fill="#1d2b23">` +
     '$' + Math.round(total).toLocaleString('en-US') + `</text>` +
-    `<text x="100" y="118" text-anchor="middle" font-size="11" fill="#5c665e">spent in Nov</text>` +
+    `<text x="100" y="118" text-anchor="middle" font-size="11" fill="#5c665e">${centreLabel || 'spent'}</text>` +
     `</svg>`;
 }
 
