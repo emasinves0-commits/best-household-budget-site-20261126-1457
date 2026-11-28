@@ -18,6 +18,16 @@ export const INCOME = [
   { date: '2026-11-20', source: 'Bank interest', amount: 42.0 },
   { date: '2026-11-22', source: 'Refund — returned jacket', amount: 58.0 },
   { date: '2026-11-14', source: 'Garage sale', amount: 300.0 },
+  // December is a plan, not actuals yet: the salaries are expected on the
+  // 15th as usual, the freelance job is booked, the rest is the usual trickle.
+  { date: '2026-12-15', source: "Maya's salary — Northgate Clinic", amount: 3400.0 },
+  { date: '2026-12-15', source: "Tom's salary — Alder & Finch", amount: 3400.0 },
+  { date: '2026-12-10', source: 'Tom — freelance wiring job', amount: 1100.0 },
+  { date: '2026-12-18', source: 'Bank interest', amount: 45.0 },
+  { date: '2026-12-20', source: 'Refund — returned gift', amount: 55.0 },
+  // January's salaries only: the December payday plan looks ahead to them.
+  { date: '2027-01-15', source: "Maya's salary — Northgate Clinic", amount: 3400.0 },
+  { date: '2027-01-15', source: "Tom's salary — Alder & Finch", amount: 3400.0 },
 ];
 
 export const BUDGETS = [
@@ -84,6 +94,41 @@ export const TRANSACTIONS = [
   { date: '2026-11-15', merchant: 'Emergency Fund', category: 'Savings', amount: 1200.0, note: 'Payday transfer to goals' },
   { date: '2026-11-09', merchant: 'Hardware Store', category: 'Misc', amount: 31.25, note: 'Light bulbs, tape' },
   { date: '2026-11-22', merchant: 'Gift Shop', category: 'Misc', amount: 43.0, note: "Grandma's birthday gift" },
+  // December, planned: the bills are real, the spending is what the
+  // household expects to spend. Planned total $4,850.75, of which $1,200
+  // goes to savings — leaving $3,149.25 of the $8,000 expected in.
+  { date: '2026-12-01', merchant: 'Hartley Mortgage', category: 'Housing', amount: 1950.0, note: 'Monthly payment' },
+  { date: '2026-12-03', merchant: 'SafeHome Insurance', category: 'Housing', amount: 200.0, note: 'Home insurance' },
+  { date: '2026-12-05', merchant: 'GreenMart', category: 'Groceries', amount: 138.2, note: 'Weekly shop, planned' },
+  { date: '2026-12-12', merchant: 'FreshFoods Market', category: 'Groceries', amount: 104.5, note: 'Weekly shop, planned' },
+  { date: '2026-12-19', merchant: 'GreenMart', category: 'Groceries', amount: 129.75, note: 'Weekly shop, planned' },
+  { date: '2026-12-26', merchant: 'Corner Deli', category: 'Groceries', amount: 52.3, note: 'Top-up shop, planned' },
+  { date: '2026-12-04', merchant: 'City Power', category: 'Utilities', amount: 130.0, note: 'November usage, planned' },
+  { date: '2026-12-10', merchant: 'NorthNet Internet', category: 'Utilities', amount: 79.0, note: 'Monthly, planned' },
+  { date: '2026-12-18', merchant: 'City Gas', category: 'Utilities', amount: 27.5, note: 'Monthly, planned' },
+  { date: '2026-12-03', merchant: 'Shell', category: 'Transport', amount: 49.0, note: 'Fuel, planned' },
+  { date: '2026-12-07', merchant: 'Metro Card', category: 'Transport', amount: 44.3, note: 'Monthly top-up, planned' },
+  { date: '2026-12-17', merchant: 'Shell', category: 'Transport', amount: 51.5, note: 'Fuel, planned' },
+  { date: '2026-12-24', merchant: 'River Toll', category: 'Transport', amount: 40.0, note: 'Bridge tolls, planned' },
+  { date: '2026-12-08', merchant: 'Pizza Night', category: 'Dining Out', amount: 36.75, note: 'Friday takeaway, planned' },
+  { date: '2026-12-22', merchant: 'Sushi House', category: 'Dining Out', amount: 58.4, note: 'Family dinner, planned' },
+  { date: '2026-12-12', merchant: 'Piano Lessons', category: 'Kids & School', amount: 120.0, note: "June's lessons, planned" },
+  { date: '2026-12-19', merchant: 'Book Nook', category: 'Kids & School', amount: 48.9, note: 'Reading books, planned' },
+  { date: '2026-12-07', merchant: 'Pharmacy', category: 'Health', amount: 38.25, note: 'Prescriptions, planned' },
+  { date: '2026-12-20', merchant: 'Riverside Gym', category: 'Health', amount: 57.5, note: 'Monthly membership, planned' },
+  { date: '2026-12-06', merchant: 'Cineplex', category: 'Entertainment', amount: 32.0, note: 'Family film night, planned' },
+  { date: '2026-12-21', merchant: 'Toy Barn', category: 'Entertainment', amount: 44.0, note: 'Board games, planned' },
+  { date: '2026-12-01', merchant: 'StreamFlix', category: 'Subscriptions', amount: 15.99, note: 'Monthly, planned' },
+  { date: '2026-12-01', merchant: 'MusicBox', category: 'Subscriptions', amount: 10.99, note: 'Monthly, planned' },
+  { date: '2026-12-05', merchant: 'Cloud Drive', category: 'Subscriptions', amount: 9.99, note: 'Storage plan, planned' },
+  { date: '2026-12-09', merchant: 'Daily News', category: 'Subscriptions', amount: 12.0, note: 'Monthly, planned' },
+  { date: '2026-12-12', merchant: 'FitTrack', category: 'Subscriptions', amount: 19.99, note: 'Fitness app, planned' },
+  { date: '2026-12-15', merchant: 'LearnKids', category: 'Subscriptions', amount: 14.99, note: "Children's learning, planned" },
+  { date: '2026-12-20', merchant: 'AudioBooks', category: 'Subscriptions', amount: 12.05, note: 'Monthly, planned' },
+  { date: '2026-12-10', merchant: 'Kids Wear', category: 'Clothing', amount: 58.5, note: 'Winter jackets, planned' },
+  { date: '2026-12-15', merchant: 'Emergency Fund', category: 'Savings', amount: 1200.0, note: 'Payday transfer to goals, planned' },
+  { date: '2026-12-09', merchant: 'Hardware Store', category: 'Misc', amount: 28.4, note: 'Light bulbs, tape, planned' },
+  { date: '2026-12-22', merchant: 'Gift Shop', category: 'Misc', amount: 36.0, note: 'Christmas gifts, planned' },
 ];
 
 export const BILLS = [
@@ -102,6 +147,11 @@ export const BILLS = [
   { name: 'Internet', payee: 'NorthNet Internet', amount: 79.0, due: '2026-12-10', paid: false, recurring: 'Monthly' },
   { name: 'Mobile phones', payee: 'CellOne', amount: 85.0, due: '2026-12-12', paid: false, recurring: 'Monthly' },
   { name: 'Car insurance', payee: 'DriveSafe', amount: 112.0, due: '2026-12-15', paid: false, recurring: 'Monthly' },
+  // January's first bills: the December calendar and payday plan look ahead to them.
+  { name: 'Mortgage', payee: 'Hartley Mortgage', amount: 1950.0, due: '2027-01-01', paid: false, recurring: 'Monthly' },
+  { name: 'Electricity', payee: 'City Power', amount: 130.0, due: '2027-01-04', paid: false, recurring: 'Monthly' },
+  { name: 'Internet', payee: 'NorthNet Internet', amount: 79.0, due: '2027-01-10', paid: false, recurring: 'Monthly' },
+  { name: 'Mobile phones', payee: 'CellOne', amount: 85.0, due: '2027-01-12', paid: false, recurring: 'Monthly' },
 ];
 
 export const GOALS = [
@@ -111,14 +161,32 @@ export const GOALS = [
   { name: 'College fund', target: 25000.0, saved: 8100.0, monthly: 250.0, note: 'A little every month since June was born.' },
 ];
 
+export const DEBTS = [
+  // The household's only debt. Balance chosen so the scheduled payment
+  // computes to exactly the $1,950.00 monthly mortgage bill already in BILLS:
+  // $318,384 at 6.2% over 30 years = $1,950.00 a month.
+  { name: 'Mortgage — Hartley home', balance: 318384.0, apr: 6.2, years: 30, note: 'The only debt the household carries. Every other bill is paid in full each month.' },
+];
+
 export const MONTHS = [
+  { month: 'Jan', income: 8200.0, spent: 6980.0 },
+  { month: 'Feb', income: 8150.0, spent: 6710.0 },
+  { month: 'Mar', income: 8300.0, spent: 7050.0 },
+  { month: 'Apr', income: 8200.0, spent: 6890.0 },
+  { month: 'May', income: 8350.0, spent: 7120.0 },
   { month: 'Jun', income: 8200.0, spent: 6620.0 },
   { month: 'Jul', income: 8400.0, spent: 7010.0 },
   { month: 'Aug', income: 8100.0, spent: 6440.0 },
   { month: 'Sep', income: 8400.0, spent: 7160.0 },
   { month: 'Oct', income: 8250.0, spent: 6710.0 },
   { month: 'Nov', income: 8400.0, spent: 5774.74 },
+  // December is a plan: spent is the planned total of the December rows.
+  { month: 'Dec', income: 8000.0, spent: 4850.75 },
 ];
+
+// The site's "today": the last November transaction is the 25th, and the
+// Plan December action is dated the 27th. Days-until on bills counts from here.
+export const TODAY = '2026-11-26';
 
 export const CATEGORY_COLORS = {
   Housing: '#1d4d3b',
